@@ -5,8 +5,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+    "plugin:prettier/recommended"],
+
+  ignorePatterns: ["webpack.config.js", ".eslintrc.cjs", "jest.config.js", "babel.config.js"],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {

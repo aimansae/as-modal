@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Starter Project
 
 This is a starter project for react.
 Please find the Guidelines for the project:
@@ -11,6 +11,7 @@ Please find the Guidelines for the project:
 4. Configure [Jest](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation) & React testing library and write a single or multiple unit tests. They all have to be passing! (For example, you can test if a text is being rendered in a component.)
    No specific functionality is necessary (like headings, buttons, pages, etc.) - at the end, it’s just a starter.
    Do not add any styling libraries. - We want to have a flexible starter!
+5. Use prettier and configure your IDE to reformat the code on save.
 
 ### Additional requirements
 
@@ -68,16 +69,17 @@ npm install tsconfig-paths --save-dev
 
 Configure jest.config.cjs file:
 
-    /* eslint-disable no-undef */
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { defaults } = require('ts-jest/presets/index.js');
+@typescript-eslint/no-var-requires
+const { defaults } = require('ts-jest/presets/index.js');
 
     module.exports = {
       ...defaults,
       testEnvironment: 'jsdom',
     };
 
-5. Created a component, a Text.test.tsx file to test if the heading is being rendered
+Created a component, a Text.test.tsx file to test if the heading is being rendered
+
+5. To setup Eslint and Prettier please find the guide [here](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
 
 ## Troubleshooting
 
@@ -96,6 +98,13 @@ Fixed: in package.json added:
 - After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
 
 Fixed by adding in tsconfig.json: "esModuleInterop": true,
+
+- TS not recognising the existence of the .toBeInTheDocument() method. In tsconfig.json add, in COmpilerOptions add:
+  “types”: [“node”, “jest”, “@testing-library/jest-dom”], in “compilerOptions
+
+- To disable and make ESLint ignore some of the files in your repo. In ESLint config add:
+
+  ignorePatterns: ["webpack.config.js", ".eslintrc.js", "jest.config.js", "babel.config.js"],
 
 ## Github setup
 
