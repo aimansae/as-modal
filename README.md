@@ -1,110 +1,50 @@
-# React + TypeScript + Vite Starter Project
+# Simple Modal with React Typescript
 
-This is a starter project for react.
-Please find the Guidelines for the project:
+This is a simple responsive Modal created with React typescript
+
+## Prerequisites
+Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
+
+Also, research what **(Portal)[https://legacy.reactjs.org/docs/portals.html]** in React is and what problems does it solve.
 
 ## Requirements
 
-1. Use Vite (as a bundler)
-2. Use Typescript
-3. Configure TS path aliases
-4. Configure [Jest](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation) & React testing library and write a single or multiple unit tests. They all have to be passing! (For example, you can test if a text is being rendered in a component.)
-   No specific functionality is necessary (like headings, buttons, pages, etc.) - at the end, it’s just a starter.
-   Do not add any styling libraries. - We want to have a flexible starter!
-5. Use prettier and configure your IDE to reformat the code on save.
+1. Use the starter project, to kick-start your development.
+2. Create a new repository and push the starter as initial commit.
+3. Pick a styling solution of your choice. (CSS, SCSS, Modules, Tailwind, Styled components, Emotion)
+Implement the UI.
+4. You should be able to open the modal from a button, and close it via: Clicking a X button in the modal, Pressing ESCAPE, clicking outside of the modal.
+5. Make sure you darken the background behind the modal.
+6. Make sure the design is responsive
+7. Add tests, no excuses
 
-### Additional requirements
 
-1. Create a Github repository.
-2. Commit your changes frequently. (For example - you’ve just initialised the project - commit “Initial commit”. You’ve configured the tsconfig.json, another commit) Keep them small but meaningful.
-   Adjust your README.md to explain your project better.
+**Time limit**: 4 hours  
 
-**Time limit**: 4 hours
 
 ## Getting Started
 
-1. **Install Vite**:
+### (Tailwind Installation)[https://tailwindcss.com/docs/guides/vite]
 
-   To install [Vite](https://vitejs.dev/guide/) as a bundler:
+In terminal:
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
 
-   ```bash
-   npm create vite@latest
-   ```
+Configure your template paths:  
+in tailwind.config.js add:
 
-Follow the indications on the terminal, select a name, React as Framework, Typescript as Variant.
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
 
-**Run the Project:**
-
-After creating the project, navigate to the project folder and install dependencies:
-
-```
-  cd (folder name) react-starter
-  npm i
-  npm run dev
-```
-
-3. To configure Ts path aliases in tsconfig.json add :
-
-```
-"baseUrl": "./",
-"paths": {
-"@app/_": ["src/_"],
-"@shared/_": ["src/shared/_"]
-}
-```
-
-Update Module Resolution (For Node.js):
-
-npm install tsconfig-paths --save-dev
-
-4. To configure Jest and React testing library:
-
-   npm install --save-dev jest typescript ts-jest @types/jest
-
-   npm install --save-dev jest @testing-library/react @testing-library/jest-dom
-
-   npm install --save-dev jest-environment-jsdom
-
-   npx ts-jest config:init
-
-Configure jest.config.cjs file:
-
-@typescript-eslint/no-var-requires
-const { defaults } = require('ts-jest/presets/index.js');
-
-    module.exports = {
-      ...defaults,
-      testEnvironment: 'jsdom',
-    };
-
-Created a component, a Text.test.tsx file to test if the heading is being rendered
-
-5. To setup Eslint and Prettier please find the guide [here](https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b)
-
+ Add the Tailwind directives to your index.css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities; 
 ## Troubleshooting
 
-- While running npm test, encountered error: " "Missing script" : 'test'"
 
-Fixed: in package.json added:
-
-```
-  "scripts": {
-  "test": "jest"
-}
-```
-
-- TypeError: expect(...).toHaveTextContent is not a function
-
-- After running npm test encountered warning: ts-jest[config] (WARN) message TS151001: If you have issues related to imports, you should consider setting `esModuleInterop` to `true` in your TypeScript configuration file (usually `tsconfig.json`). See https://blogs.msdn.microsoft.com/typescript/2018/01/31/announcing-typescript-2-7/#easier-ecmascript-module-interoperability for more information.
-
-Fixed by adding in tsconfig.json: "esModuleInterop": true,
-
-- TS not recognising the existence of the .toBeInTheDocument() method. In tsconfig.json add, in COmpilerOptions add:
-  “types”: [“node”, “jest”, “@testing-library/jest-dom”], in “compilerOptions
-
-- To disable and make ESLint ignore some of the files in your repo. In ESLint config add:
-
-  ignorePatterns: ["webpack.config.js", ".eslintrc.js", "jest.config.js", "babel.config.js"],
 
 ## Github setup
 
@@ -116,13 +56,17 @@ git init
 git add .
 git commit -m ‘First commit’
 
-2. Open github and create new reposotory
+2. Open github and create new repository
 
 Copy the link and in terminal add:
 
 git remote add origin (paste the link to the Github repo here)
 git push origin master
 
-If needed Enter credentials to connect the IDE to Gthub
+If needed Enter credentials to connect the IDE to Github
 
 Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
+
+
+## Resources:
+(Accessible Modal with Portals)[https://assortment.io/posts/accessible-modal-component-react-portals-part-1]
