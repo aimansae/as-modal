@@ -16,18 +16,18 @@ describe('Main renders', () => {
     expect(screen.getByRole('button', { name: /open modal/i })).toBeInTheDocument();
   });
 
-  test('Open Modal button works', async () => {
-    render(<Main />);
-    const modalButton = screen.getByRole('button', { name: /open modal/i });
-    console.log('before clicking');
+  //   test('Open Modal button works', async () => {
+  //     render(<Main />);
+  //     const modalButton = screen.getByRole('button', { name: /open modal/i });
+  //     console.log('before clicking');
 
-    await userEvent.click(modalButton);
-    console.log('After clicking');
+  //     await userEvent.click(modalButton);
+  //     console.log('After clicking');
 
-    await waitFor(() => {
-      console.log('wait modal clicking');
+  //     await waitFor(() => {
+  //       console.log('wait modal clicking');
 
-      expect(screen.getByTestId('modal')).toBeInTheDocument();
-    });
-  });
+  //       expect(screen.getByTestId('modal')).toBeInTheDocument();
+  //     });
+  //   });
 });

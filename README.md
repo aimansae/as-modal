@@ -2,6 +2,9 @@
 
 This is a simple responsive Modal created with React typescript
 
+![Modal Preview](./src/assets/modal-preview.PNG)
+
+Please find the deployed site (here)[https://as-react-modal.netlify.app/]
 ## Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
 
@@ -98,3 +101,5 @@ to simulate clicks and user event installed UserEvent:
 (Accessible Modal with Portals)[https://assortment.io/posts/accessible-modal-component-react-portals-part-1]
 
 (Automatic Class Sorting)[https://tailwindcss.com/blog/automatic-class-sorting-with-prettier]
+
+(Modal Testing)[https://dev.to/mihomihouk/test-a-portal-element-in-a-react-app-152h]
