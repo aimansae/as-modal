@@ -42,9 +42,30 @@ in tailwind.config.js add:
     @tailwind base;
     @tailwind components;
     @tailwind utilities; 
+
+
+To automatically order classes:
+      npm install -D prettier prettier-plugin-tailwindcss
+
+In prettierrc add:
+   "plugins": ["prettier-plugin-tailwindcss"]
+
+## To install [React X Icon](React-icons.github.io/react-icons/):
+    npm install react-icons --save
 ## Troubleshooting
 
+While Creating portal encountered typescript error:
+  *Argument of type '<T extends Node>(node: T) => T' is not assignable to parameter of type 'Element | DocumentFragment'.ts(2345)
+(method) Document.getElementById(elementId: string): HTMLElement | null
+Returns a reference to the first object with the specified value of the ID attribute.*
 
+- Needed to check that portal exists first **Fixed with:**
+
+const getPortal = document.getElementById('portal')
+
+if(!getPortal) return null
+
+and then returned portal in the modal components, see line 41 Modal.tsx
 
 ## Github setup
 
@@ -67,6 +88,13 @@ If needed Enter credentials to connect the IDE to Github
 
 Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
 
+## Testing:
+
+to simulate clicks and user event installed UserEvent:
+    npm install --save-dev @testing-library/user-event
+
 
 ## Resources:
 (Accessible Modal with Portals)[https://assortment.io/posts/accessible-modal-component-react-portals-part-1]
+
+(Automatic Class Sorting)[https://tailwindcss.com/blog/automatic-class-sorting-with-prettier]
