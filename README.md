@@ -1,14 +1,15 @@
 # Simple Modal with React Typescript
 
-This is a simple responsive Modal created with React typescript
+This is a simple responsive Modal created with React Typescript.
 
 ![Modal Preview](./src/assets/modal-preview.PNG)
 
 Please find the deployed site (here)[https://as-react-modal.netlify.app/]
+
 ## Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
 
-Also, research what **(Portal)[https://legacy.reactjs.org/docs/portals.html]** in React is and what problems does it solve.
+Also, research what **[Portal](https://legacy.reactjs.org/docs/portals.html)** in React is and what problems does it solve.
 
 ## Requirements
 
@@ -27,7 +28,7 @@ Implement the UI.
 
 ## Getting Started
 
-### (Tailwind Installation)[https://tailwindcss.com/docs/guides/vite]
+### [Tailwind Installation](https://tailwindcss.com/docs/guides/vite)
 
 In terminal:
   npm install -D tailwindcss postcss autoprefixer
@@ -42,19 +43,26 @@ in tailwind.config.js add:
   ],
 
  Add the Tailwind directives to your index.css
+
     @tailwind base;
     @tailwind components;
     @tailwind utilities; 
 
 
 To automatically order classes:
+
       npm install -D prettier prettier-plugin-tailwindcss
 
 In prettierrc add:
+
    "plugins": ["prettier-plugin-tailwindcss"]
 
-## To install [React X Icon](React-icons.github.io/react-icons/):
+## To install [React X Icon]
+
+(React-icons.github.io/react-icons/):
+
     npm install react-icons --save
+
 ## Troubleshooting
 
 While Creating portal encountered typescript error:
@@ -98,8 +106,9 @@ to simulate clicks and user event installed UserEvent:
 
 
 ## Resources:
-(Accessible Modal with Portals)[https://assortment.io/posts/accessible-modal-component-react-portals-part-1]
 
-(Automatic Class Sorting)[https://tailwindcss.com/blog/automatic-class-sorting-with-prettier]
+[Accessible Modal with Portals](https://assortment.io/posts/accessible-modal-component-react-portals-part-1)
 
-(Modal Testing)[https://dev.to/mihomihouk/test-a-portal-element-in-a-react-app-152h]
+[Automatic Class Sorting](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
+
+[Modal Testing](https://dev.to/mihomihouk/test-a-portal-element-in-a-react-app-152h)
