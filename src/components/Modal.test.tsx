@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 describe('Modal', () => {
   const onCloseMock = jest.fn();
+
   const props = {
     onClose: onCloseMock,
     continueText: 'Continue',
@@ -14,6 +15,7 @@ describe('Modal', () => {
   };
   test('Modal renders', () => {
     render(<Modal {...props} />);
+
     expect(screen.getByText(props.title)).toBeInTheDocument();
     expect(screen.getByText(props.bodyText)).toBeInTheDocument();
     expect(screen.getByText(props.continueText)).toBeInTheDocument();
@@ -26,6 +28,7 @@ describe('Modal', () => {
     await userEvent.click(continueButton);
     await userEvent.click(document.body);
     await userEvent.type(document.body, 'esc');
+
     expect(props.onClose).toHaveBeenCalledTimes(1);
   });
 });

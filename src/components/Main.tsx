@@ -1,13 +1,12 @@
 import { useRef, useState } from 'react';
 import Modal from './Modal';
-import {modal} from '../ModalText'
+import { modal } from '../ModalText';
 
 const Main = () => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const [openModal, setOpenModal] = useState(false);
 
- 
   const showModal = () => {
     setOpenModal(!openModal);
     console.log('Modal clicked');
