@@ -4,7 +4,7 @@ This is a simple responsive Modal created with React Typescript.
 
 ![Modal Preview](./src/assets/modal-preview.PNG)
 
-Please find the deployed site (here)[https://as-react-modal.netlify.app/]
+Please find the deployed site [here](https://as-react-modal.netlify.app/)
 
 ## Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
