@@ -9,7 +9,6 @@ const Main = () => {
 
   const showModal = () => {
     setOpenModal(!openModal);
-    console.log('Modal clicked');
   };
 
   return (

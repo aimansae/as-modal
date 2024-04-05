@@ -78,6 +78,13 @@ if(!getPortal) return null
 
 and then returned portal in the modal components, see line 41 Modal.tsx
 
+While running tests, encountered the following error:
+
+![Jest Error](../react-starter-project/src/assets/unref-error.PNG)
+
+Fixed by adding to script, test in package.json
+  --watchAll --detectOpenHandles
+
 ## Github setup
 
 1. Create a local folder and connect it to [Github](https://github.com/)
