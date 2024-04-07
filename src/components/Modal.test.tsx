@@ -11,13 +11,13 @@ describe('Modal', () => {
     continueText: 'Continue',
     cancelText: 'Cancel',
     title: 'Test Modal',
-    bodyText: 'Testing Modal content'
+    children: 'modal body'
   };
   test('Modal renders', () => {
     render(<Modal {...props} />);
 
     expect(screen.getByText(props.title)).toBeInTheDocument();
-    expect(screen.getByText(props.bodyText)).toBeInTheDocument();
+    expect(screen.getByText(props.children)).toBeInTheDocument();
     expect(screen.getByText(props.continueText)).toBeInTheDocument();
     expect(screen.getByText(props.cancelText)).toBeInTheDocument();
   });
