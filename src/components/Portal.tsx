@@ -5,7 +5,7 @@ type PortalProps = {
   children: ReactNode;
 };
 
-const ModalPortal = ({ children }: PortalProps) => {
+const Portal = ({ children }: PortalProps) => {
   const portalRoot = document.createElement('div');
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const ModalPortal = ({ children }: PortalProps) => {
   return ReactDOM.createPortal(children, portalRoot);
 };
 
-export default ModalPortal;
+export default Portal;
