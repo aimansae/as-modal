@@ -1,17 +1,17 @@
 # Simple Modal with React Typescript
 
-This is a simple responsive Modal created with React Typescript.
+This is a simple responsive Modal created with React Typescript. It supports multiple closing actions and is rendered via a React Portal to ensure proper layering in the DOM.
 
 ![Modal Preview](./src/assets/modal-preview.PNG)
 
-Please find the deployed site [here](https://as-react-modal.netlify.app/)
+Please find the deployed site [here](https://as-react-modal.netlify.app/) and my Github Repo [here](https://github.com/aimansae/as-modal?tab=readme-ov-file)
 
-## Prerequisites
+### Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
 
 Also, research what **[Portal](https://legacy.reactjs.org/docs/portals.html)** in React is and what problems does it solve.
 
-## Requirements
+### Requirements
 
 1. Use the starter project, to kick-start your development.
 2. Create a new repository and push the starter as initial commit.
@@ -23,20 +23,44 @@ Implement the UI.
 7. Add tests, no excuses
 
 
+
+## Features
+- Open modal via button click
+= Close modal via:
+X button, ESC key, Click outside (overlay)
+- Dimmed background overlay
+- Responsive design
+- Built with accessibility in mind using React Portal
+- Unit tested with React Testing Library and Jest
+
 **Time limit**: 4 hours  
 
+## 🛠️ Technologies Used
 
-## Getting Started
+ - [React](https://reactjs.org/) - JavaScript library for building user interfaces 
+ - [TypeScript](https://www.typescriptlang.org/) - Adds static typing to JavaScript 
+ - [Tailwind CSS](https://tailwindcss.com/docs) - Utility-first CSS framework for styling 
+ - [React Portals](https://legacy.reactjs.org/docs/portals.html) - Enables rendering components outside the DOM hierarchy 
+ - [React Icons](https://react-icons.github.io/react-icons/) - Icon library with popular icon sets 
+ - [Vite](https://vitejs.dev/) - Lightning-fast frontend tooling 
+ - [Jest](https://jestjs.io/docs/getting-started) - Testing framework for JavaScript 
+ - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - For testing React UI components 
+ - [User Event](https://testing-library.com/docs/user-event/intro/) - Simulates real user interactions in tests
+
+### Getting Started
 
 ### [Tailwind Installation](https://tailwindcss.com/docs/guides/vite)
 
 In terminal:
+
+```bash
   npm install -D tailwindcss postcss autoprefixer
   npx tailwindcss init -p
-
+```
 Configure your template paths:  
 in tailwind.config.js add:
 
+```bash
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -56,16 +80,16 @@ To automatically order classes:
 In prettierrc add:
 
    "plugins": ["prettier-plugin-tailwindcss"]
-
-## To install [React X Icon]
+```
+### To install [React X Icon]
 
 (React-icons.github.io/react-icons/):
 
     npm install react-icons --save
 
-## Troubleshooting
+### Troubleshooting
 
-While Creating portal encountered typescript error:
+- While Creating portal encountered typescript error:
   *Argument of type '<T extends Node>(node: T) => T' is not assignable to parameter of type 'Element | DocumentFragment'.ts(2345)
 (method) Document.getElementById(elementId: string): HTMLElement | null
 Returns a reference to the first object with the specified value of the ID attribute.*
@@ -78,7 +102,7 @@ if(!getPortal) return null
 
 and then returned portal in the modal components, see line 41 Modal.tsx
 
-While running tests, encountered the following error:
+- While running tests, encountered the following error:
 
 ![Jest Error](../react-starter-project/src/assets/unref-error.PNG)
 
@@ -106,13 +130,13 @@ If needed Enter credentials to connect the IDE to Github
 
 Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
 
-## Testing:
+### Testing:
 
 to simulate clicks and user event installed UserEvent:
     npm install --save-dev @testing-library/user-event
 
 
-## Resources:
+### Resources:
 
 [Accessible Modal with Portals](https://assortment.io/posts/accessible-modal-component-react-portals-part-1)
 

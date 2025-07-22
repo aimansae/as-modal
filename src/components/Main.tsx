@@ -15,7 +15,7 @@ const Main = () => {
   };
 
   return (
-    <div className="my-2 flex flex-col items-center justify-center gap-2">
+    <div className="my-2 h-screen flex flex-col items-center justify-center gap-2">
       <h1 className="text-xl font-bold">Click to see the Modal</h1>
       <button
         onClick={toggleModal}
