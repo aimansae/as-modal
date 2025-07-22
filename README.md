@@ -4,7 +4,7 @@ This is a simple responsive Modal created with React Typescript. It supports mul
 
 ![Modal Preview](./src/assets/modal-preview.PNG)
 
-Please find the deployed site [here](https://as-react-modal.netlify.app/) and my Github Repo [here](https://github.com/aimansae/as-modal?tab=readme-ov-file)
+Please find the deployed site [here](https://as-modal.netlify.app/) and my Github Repo [here](https://github.com/aimansae/as-modal?tab=readme-ov-file)
 
 ### Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
