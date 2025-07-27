@@ -6,12 +6,26 @@ This is a simple responsive Modal created with React Typescript. It supports mul
 
 Please find the deployed site [here](https://as-modal.netlify.app/) and my Github Repo [here](https://github.com/aimansae/as-modal?tab=readme-ov-file)
 
-### Prerequisites
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Requirements](#requirements)
+- [Features](#features)
+- [Technologies Used](#-technologies-used)
+- [Challenges & Thought Process](#-challenges--thought-process)
+- [Getting Started](#getting-started)
+- [GitHub Setup](#github-setup)
+- [Troubleshooting](#troubleshooting)
+- [Testing](#testing)
+- [Resources](#resources)
+
+
+## Prerequisites
 Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
 
 Also, research what **[Portal](https://legacy.reactjs.org/docs/portals.html)** in React is and what problems does it solve.
 
-### Requirements
+## Requirements
 
 1. Use the starter project, to kick-start your development.
 2. Create a new repository and push the starter as initial commit.
@@ -35,7 +49,7 @@ X button, ESC key, Click outside (overlay)
 
 **Time limit**: 4 hours  
 
-## 🛠️ Technologies Used
+## Technologies Used
 
  - [React](https://reactjs.org/) - JavaScript library for building user interfaces 
  - [TypeScript](https://www.typescriptlang.org/) - Adds static typing to JavaScript 
@@ -47,9 +61,34 @@ X button, ESC key, Click outside (overlay)
  - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - For testing React UI components 
  - [User Event](https://testing-library.com/docs/user-event/intro/) - Simulates real user interactions in tests
 
-### Getting Started
+## Challenges
+While working on this modal project, I came across a few challenges that pushed me to better understand how React and the browser work together, especially around Portals, React Refs, and event handling.
 
-### [Tailwind Installation](https://tailwindcss.com/docs/guides/vite)
+- After some research, I realized that placing the modal directly inside the main component tree can lead to layout and layering issues — especially when dealing with z-index. Portals solve this by rendering the modal directly into the <body>, which ensures it appears above all other content, regardless of its position in the component hierarchy.
+
+- I also faced a TypeScript error when trying to mount the Portal. The issue was that document.getElementById('portal') could return null if the DOM element wasn’t loaded yet. I fixed it by checking if the portal element exists before rendering:
+```bash 
+
+const portalRoot = document.getElementById('portal');
+if (!portalRoot) return null;
+
+```
+- Handling Clicks Outside the Modal
+One of the key features was closing the modal when clicking outside of it. To do this, I used a ref to the modal content. At first, working with ref.current felt confusing, but I learned that it's just a reference to the actual DOM node. Using it, I could check if the clicked element was outside the modal:
+
+```bash 
+if (modalRef.current && !modalRef.current.contains(event.target)) {
+  onClose();
+}
+This made it possible to close the modal only when the user clicks outside of it.
+```
+
+- Building the Overlay
+Creating the dark overlay behind the modal was trickier than expected. I needed to make sure it covered the entire screen and sat behind the modal, but above everything else. That meant using position: fixed, full width/height, and a lower z-index than the modal itself. The overlay also doubles as a background that listens for clicks to close the modal, adding both visual and functional value.
+
+## Getting Started
+
+1. [Tailwind Installation](https://tailwindcss.com/docs/guides/vite)
 
 In terminal:
 
@@ -81,33 +120,9 @@ In prettierrc add:
 
    "plugins": ["prettier-plugin-tailwindcss"]
 ```
-### To install [React X Icon]
-
-(React-icons.github.io/react-icons/):
+2. Install React [Icons](React-icons.github.io/react-icons/)
 
     npm install react-icons --save
-
-### Troubleshooting
-
-- While Creating portal encountered typescript error:
-  *Argument of type '<T extends Node>(node: T) => T' is not assignable to parameter of type 'Element | DocumentFragment'.ts(2345)
-(method) Document.getElementById(elementId: string): HTMLElement | null
-Returns a reference to the first object with the specified value of the ID attribute.*
-
-- Needed to check that portal exists first **Fixed with:**
-
-const getPortal = document.getElementById('portal')
-
-if(!getPortal) return null
-
-and then returned portal in the modal components, see line 41 Modal.tsx
-
-- While running tests, encountered the following error:
-
-![Jest Error](../react-starter-project/src/assets/unref-error.PNG)
-
-Fixed by adding to script, test in package.json
-  --watchAll --detectOpenHandles
 
 ## Github setup
 
@@ -130,16 +145,56 @@ If needed Enter credentials to connect the IDE to Github
 
 Resources found on [Youtube](https://www.youtube.com/watch?v=vbQ2bYHxxEA)
 
-### Testing:
+## Troubleshooting
 
-to simulate clicks and user event installed UserEvent:
-    npm install --save-dev @testing-library/user-event
+- While Creating portal encountered typescript error:
+  *Argument of type '<T extends Node>(node: T) => T' is not assignable to parameter of type 'Element | DocumentFragment'.ts(2345)
+(method) Document.getElementById(elementId: string): HTMLElement | null
+Returns a reference to the first object with the specified value of the ID attribute.*
+
+- Needed to check that portal exists first **Fixed with:**
+
+const getPortal = document.getElementById('portal')
+
+if(!getPortal) return null
+
+and then returned portal in the modal components, see line 41 Modal.tsx
+
+- While running tests, encountered the following error:
+
+![Jest error](./src/assets/unref-error.PNG)
+
+Fixed by adding to script, test in package.json
+  --watchAll --detectOpenHandles
+
+## Testing: Used [Jest](https://nextjs.org/docs/app/guides/testing/jest) for testing
 
 
-### Resources:
 
-[Accessible Modal with Portals](https://assortment.io/posts/accessible-modal-component-react-portals-part-1)
+ 
+```bash
 
-[Automatic Class Sorting](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
+npx create-next-app@latest --example with-jest with-jest-app
 
-[Modal Testing](https://dev.to/mihomihouk/test-a-portal-element-in-a-react-app-152h)
+To set up Jest, install jest and the following packages as dev dependencies:
+npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/dom @testing-library/jest-dom ts-node @types/jest
+
+Generate a basic Jest configuration file by running the following command:
+npm init jest@latest
+
+To simulate clicks and user event installed UserEvent:
+
+npm install --save-dev @testing-library/user-event
+
+To run tests:
+npm run test
+```
+
+
+## Resources:
+
+- [Accessible Modal with Portals](https://assortment.io/posts/accessible-modal-component-react-portals-part-1)
+
+- [Automatic Class Sorting](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
+
+- [Modal Testing](https://dev.to/mihomihouk/test-a-portal-element-in-a-react-app-152h)
