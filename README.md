@@ -11,8 +11,8 @@ Please find the deployed site [here](https://as-modal.netlify.app/) and my Githu
 - [Prerequisites](#prerequisites)
 - [Requirements](#requirements)
 - [Features](#features)
-- [Technologies Used](#-technologies-used)
-- [Challenges & Thought Process](#-challenges--thought-process)
+- [Technologies Used](#technologies-used)
+- [Challenges ](#challenges)
 - [Getting Started](#getting-started)
 - [GitHub Setup](#github-setup)
 - [Troubleshooting](#troubleshooting)
@@ -21,9 +21,11 @@ Please find the deployed site [here](https://as-modal.netlify.app/) and my Githu
 
 
 ## Prerequisites
-Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
+This is challenge from my mentor Amal
 
-Also, research what **[Portal](https://legacy.reactjs.org/docs/portals.html)** in React is and what problems does it solve.
+*Before you start with this task, research what is the correct way to implement a modal (it’s at the end of the HTML content, directly into the body), but I want you to figure out why exactly.
+
+Also, research what **[Portal](https://legacy.reactjs.org/docs/portals.html)** in React is and what problems does it solve.*
 
 ## Requirements
 
